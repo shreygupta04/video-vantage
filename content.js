@@ -11,3 +11,5 @@ console.log(comments)
 
 // sends comments to background.js as array
 chrome.runtime.sendMessage({"comments": comments})
+
+
