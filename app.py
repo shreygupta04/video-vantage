@@ -1,5 +1,6 @@
 from flask import Flask, request
 from flask_cors import CORS
+# from model import form_review
 
 app = Flask(__name__)
 CORS(app)
@@ -10,5 +11,6 @@ def predict():
     
     if request.method == "POST":
         comments = request.json["comments"]
-    
-    return {"prediction": "2"}
+    print(comments)
+    return {"prediction": comments}
+
