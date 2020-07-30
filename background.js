@@ -1,3 +1,5 @@
+var rating;
+
 chrome.extension.onMessage.addListener(
     function(request, sender, sendResponse) {
     if (request.message === "activate_icon") {
@@ -7,11 +9,15 @@ chrome.extension.onMessage.addListener(
     }
     if(request.comments) {
         $.ajax({
-            type : 'POST',
+            type: 'POST',
             contentType: 'application/json',
             headers: {"Access-Control-Allow-Origin":"*"},
-            url : "http://127.0.0.1:5000/predict/",
-            data : JSON.stringify({'comments': request.comments})
+            url: "http://127.0.0.1:5000/predict/",
+            data: JSON.stringify({'comments': request.comments}),
+            success: function(resp) {
+                // rating = resp["rating"]
+                console.log(resp)
+            }
         });
     }
 });
