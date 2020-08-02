@@ -1,6 +1,5 @@
 import re
 import nltk
-from nltk.corpus import stopwords
 from nltk import WordNetLemmatizer
 
 def clean_comment(comment: str):
