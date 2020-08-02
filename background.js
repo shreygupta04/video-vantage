@@ -10,7 +10,7 @@ chrome.extension.onMessage.addListener(
             type: 'POST',
             contentType: 'application/json',
             headers: {"Access-Control-Allow-Origin":"*"},
-            url: "http://127.0.0.1:5000/predict/",
+            url: "https://video-vantage.herokuapp.com/predict/",
             data: JSON.stringify({'comments': request.comments}),
             success: function(resp) {
                 chrome.tabs.query({active: true, currentWindow: true}, function(tabs){
