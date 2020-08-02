@@ -23,7 +23,8 @@ def predict():
     if rating >= 5:
         rating = 5.0
     else:
-        rating = (rating/len(comments) + 1) * (5)/(2) * 1.2
+        if len(comments) > 0:
+            rating = (rating/len(comments) + 1) * (5)/(2) * 1.2
     
      
     return Response(json.dumps({"rating" : rating}), mimetype='application/json')
