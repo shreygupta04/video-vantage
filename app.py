@@ -1,5 +1,5 @@
 import json
-from flask import Flask, request
+from flask import Flask, request, Response
 from flask_cors import CORS
 from clean import clean_comment
 from textblob import TextBlob
@@ -20,10 +20,11 @@ def predict():
         print(clean_comment(comment) + ": " + str(temp))
         rating += temp
 
-    if rating > 0:
-        rating = (((rating/len(comments) + 1) / 2) * 5) * 1.2
     if rating >= 5:
         rating = 5.0
-    print(rating)
-    return json.dumps({"rating": rating})
+    else:
+        rating = (rating/len(comments) + 1) * (5)/(2) * 1.2
+    
+     
+    return Response(json.dumps({"rating" : rating}), mimetype='application/json')
 

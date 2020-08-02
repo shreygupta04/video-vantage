@@ -7,9 +7,13 @@ var comments = []
 $("#content-text.style-scope.ytd-comment-renderer").each(function(index) {
     comments.push($(this).text())
 })
-console.log(comments)
 
 // sends comments to background.js as array
 chrome.runtime.sendMessage({"comments": comments})
 
-
+chrome.extension.onMessage.addListener(
+    function(request, sender, sendResponse) {
+    if (request.rating) {
+        chrome.runtime.sendMessage({"rating": request.rating.toString()});
+    }
+});
