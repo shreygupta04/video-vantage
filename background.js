@@ -8,9 +8,12 @@ chrome.extension.onMessage.addListener(
     if(request.comments) {
         $.ajax({
             type: 'POST',
+            connection: "keep-alive",
+            server: "gunicorn/20.0.4",
             contentType: 'application/json',
-            headers: {"Access-Control-Allow-Origin":"*"},
+            "Access-Control-Allow-Origin": "*",
             url: "https://video-vantage.herokuapp.com/predict/",
+            via: "1.1 vegur",
             data: JSON.stringify({'comments': request.comments}),
             success: function(resp) {
                 chrome.tabs.query({active: true, currentWindow: true}, function(tabs){
