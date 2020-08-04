@@ -1,4 +1,4 @@
-# video-vantage
+# Video Vantage
 Have you ever found yourself watching a YouTube video and then realize it was a complete waste of time? Video Vantage solves this problem by calculating an individual rating for each comment under the video using NLP and generates an overall rating for the video. This saves time because you are able to detect if a video is beneficial before making a significant time investment.
 
 ## Getting Started
