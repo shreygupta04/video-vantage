@@ -1,5 +1,5 @@
 # Video Vantage
-Have you ever found yourself watching a YouTube video and then realize it was a complete waste of time? Video Vantage solves this problem by calculating an individual rating for each comment under the video using NLP and generates an overall rating for the video. This saves time because you are able to detect if a video is beneficial before making a significant time investment.
+Have you ever found yourself watching a YouTube video and then realize it was a complete waste of time? Video Vantage solves this problem by calculating an individual rating for each comment under the video using NLP and generates an overall rating for the video. This saves time because you are able to detect if a video is beneficial before making a significant time investment. [Chrome Extension](https://chrome.google.com/webstore/detail/video-vantage/oodmlhamhkdjlnjfiahfehecngaeffbe).
 
 ## Getting Started
 To test this on your local machine you will need to setup a virtualenv and run `pip install -r requirements.txt` to install the necessary dependencies.
